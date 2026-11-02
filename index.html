@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Like with Image</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* 1. تنسيق الزر الأساسي (أخضر بدلاً من الأزرق) */
+        #likeBtn {
+            background-color: #2ed573; /* لون أخضر حقيقي وجميل */
+            color: white;
+            font-size: 18px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            transition: 0.3s;
+        }
+
+        #likeBtn:active {
+            transform: scale(0.95);
+        }
+
+        /* 2. تغيير لون الزر بعد الضغط (أحمر فاتح شوي بدلاً من الرمادي) */
+        #likeBtn:disabled {
+            background-color: #ff7675; /* أحمر فاتح هادئ وأنيق */
+            color: white;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        /* 3. تنسيق الصورة وتكبير حجمها */
+        #myImage {
+            width: 650px;              /* عرض مناسب وواضح جداً */
+            margin-top: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            display: none;             /* مخفية في البداية */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Hello!</h1>
+
+    <button id="likeBtn">Click here</button>
+
+    <br>
+
+    <!-- هنا تم وضع رابط صورة وائل كفوري الخارق الذي أرسلتيه -->
+    <img id="myImage" src="https://platform.barcablaugranes.com/wp-content/uploads/sites/21/chorus/uploads/chorus_asset/file/25819505/2191173318.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C99.987501562305&w=2400" alt="Wael Kfoury">
+
+    <script>
+      const btn = document.getElementById('likeBtn');
+const img = document.getElementById('myImage');
+
+btn.addEventListener('click', function() {
+  // يغير النص إلى بيدري فقط بدون أي أرقام
+  btn.innerText = 'Pedri'; 
+  
+  // إظهار الصورة فوراً
+  img.style.display = 'inline-block';
+  
+  // تعطيل الزر ليتحول للون الأحمر الفاتح
+  btn.disabled = true; 
+      });
+    </script>
+
+</body>
+</html>
